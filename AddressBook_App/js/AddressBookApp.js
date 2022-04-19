@@ -71,20 +71,6 @@ names.addEventListener('input', function () {
     }
 });
 
-const phone = document.querySelector('#phone');
-phone.addEventListener('input',function(){
-    if(phone.value.length==0){
-        document.querySelector('.phone-error').textContent="";
-        return;
-    }
-    try {
-        (new Contact()).phone = phone.value;
-        document.querySelector('.phone-error').textContent="";
-        } catch (e) {
-            document.querySelector('.phone-error').textContent=e;
-        }
-});
-
 const address = document.querySelector('#address');
 address.addEventListener('input',function(){
     if(address.value.length==0){
@@ -97,4 +83,18 @@ address.addEventListener('input',function(){
         } catch (e) {
             document.querySelector('.address-error').textContent=e;
         } 
+});
+
+const phone = document.querySelector('#phone');
+phone.addEventListener('input',function(){
+    if(phone.value.length==0){
+        document.querySelector('.phone-error').textContent="";
+        return;
+    }
+    try {
+        (new Contact()).phone = phone.value;
+        document.querySelector('.phone-error').textContent="";
+        } catch (e) {
+            document.querySelector('.phone-error').textContent=e;
+        }
 });
