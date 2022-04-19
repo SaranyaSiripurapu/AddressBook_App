@@ -98,3 +98,18 @@ phone.addEventListener('input',function(){
             document.querySelector('.phone-error').textContent=e;
         }
 });
+
+const save = () => {
+    createContact();
+}
+
+const createContact = () => {
+    const person = new Contact();
+    person.name = document.querySelector('#name').value;
+    person.address = document.querySelector('#address').value;
+    person.city = document.querySelector('#city').value;
+    person.state = document.querySelector('#state').value;
+    person.zip = document.querySelector('#zip').value;
+    person.phone = document.querySelector('#phone').value;
+    alert(person.toString());
+}
