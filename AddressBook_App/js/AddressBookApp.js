@@ -133,14 +133,3 @@ const storeToLocalStorage = (person) => {
     alert(contactList.toString());
     localStorage.setItem("ContactList", JSON.stringify(contactList));
 }
-
-//Handle cancel button//
-
-const onreset = () => {
-    document.querySelector('#name').value="";
-    document.querySelector('#address').value="";
-    document.querySelector('#city').selectedIndex=0;
-    document.querySelector('#state').selectedIndex=0;
-    document.querySelector('#zip').value="";
-    document.querySelector('#phone').value="";
-}
