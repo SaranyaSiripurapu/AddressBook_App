@@ -114,8 +114,7 @@ const createContact = () => {
     alert(person.toString());
 }
 
-//Ability to Add the Address Book Entry into an Address Book List and store it in Local Storage
-//
+//Ability to Add the Address Book Entry into an Address Book List and store it in Local Storage//
 
 const createNewID = () => {
     let personID = localStorage.getItem('PersonID');
@@ -133,4 +132,15 @@ const storeToLocalStorage = (person) => {
     }
     alert(contactList.toString());
     localStorage.setItem("ContactList", JSON.stringify(contactList));
+}
+
+//Handle cancel button//
+
+const onreset = () => {
+    document.querySelector('#name').value="";
+    document.querySelector('#address').value="";
+    document.querySelector('#city').selectedIndex=0;
+    document.querySelector('#state').selectedIndex=0;
+    document.querySelector('#zip').value="";
+    document.querySelector('#phone').value="";
 }
