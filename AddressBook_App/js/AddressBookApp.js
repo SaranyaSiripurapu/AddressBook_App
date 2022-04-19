@@ -1,7 +1,7 @@
 class Contact {
 
     id;
-    
+
     get name() {
         return this._name;
     }
@@ -16,7 +16,7 @@ class Contact {
         return this._address;
     }
     set address(address){
-        let nameRegex = RegExp('^[A-Z a-z]{4,}$');
+        let nameRegex = RegExp('^[#.0-9a-zA-Z\\s,-]+$');
         if (nameRegex.test(address)) 
             this._address = address;
         else throw "Address is Invalid"    
@@ -26,7 +26,7 @@ class Contact {
         return this._zip;
     }
     set zip(zip){
-        let nameRegex = RegExp('^[0-9]{6}$');
+        let nameRegex = RegExp('^[1-9]{1}[0-9]{5}$');
         if (nameRegex.test(zip)) this._zip = zip;
         else throw "zip  is Invalid"    
     }
@@ -35,7 +35,7 @@ class Contact {
         return this._phone;
     }
     set phone(phone){
-        let nameRegex = RegExp('^[0-9]{10,13}$');
+        let nameRegex = RegExp('+(?:[0-9] ?){6,14}[0-9]$');
         if (nameRegex.test(phone)) this._phone = phone;
         else throw "Phone  is Invalid"    
     }
@@ -43,9 +43,15 @@ class Contact {
     get city(){
         return this._city;
     }
+    set city(city){
+        this._city=city;
+    }
 
     get state(){
         return this._state;
+    }
+    set state(state){
+        this._state=state;
     }
 
 }

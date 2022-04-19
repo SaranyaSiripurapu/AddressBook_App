@@ -21,7 +21,7 @@
     <div class="form-container">
       <div class="form-header" style="text-align: center;">
         PERSON ADDRESS FORM
-        <img src="../assets/cancel.jpg" width="3%" style="float: right;">
+        <a href="AddressBookApp.html"><img src="../assets/cancel.jpg" width="3%" style="float: right;"></a>
       </div><!--form-header-->
       <form class="form" action="#" onreset="resetForm()" onsubmit="save()" ><!--main form start-->
         <div class="row-content">
@@ -729,8 +729,16 @@
           <label class="label txt" for="phone">Phone Number</label>
           <input class="input" type="text" id="phone" name="phone" required>
         </div><!--Phone container--> 
+        <div class="button-content">
+          <div class="empty-content"></div>
+          <div class="add-reset">
+              <button onclick=myFunction() type="submit" class="button addButton" id="addButton">Submit</button>
+              <button type="reset" class="button resetButton">Reset</button>
+          </div>
+       </div><!--Button Container-->   
       </form> <!--form end-->
     </div><!--form-container-->
   </div><!--main-container-->
+  <script src="../js/AddressBookApp.js"></script>
 </body>
 </html>
