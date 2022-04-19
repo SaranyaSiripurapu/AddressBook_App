@@ -113,3 +113,24 @@ const createContact = () => {
     person.phone = document.querySelector('#phone').value;
     alert(person.toString());
 }
+
+//Ability to Add the Address Book Entry into an Address Book List and store it in Local Storage
+//
+
+const createNewID = () => {
+    let personID = localStorage.getItem('PersonID');
+    personID = !personID ? 1: (parseInt(personID)+1).toString();
+    localStorage.setItem('PersonID',personID);
+    return personID;
+}
+
+const storeToLocalStorage = (person) => {
+    let contactList = JSON.parse(localStorage.getItem("ContactList"));
+    if(contactList){
+        contactList.push(person);
+    } else{
+        contactList = [person];
+    }
+    alert(contactList.toString());
+    localStorage.setItem("ContactList", JSON.stringify(contactList));
+}
